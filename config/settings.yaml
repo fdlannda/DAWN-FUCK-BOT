@@ -1,0 +1,76 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+#                           Application Configuration
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# Master configuration file for the application's core services and functionality.
+# Includes settings for multi-threading, email handling, and security features.
+
+# ┌────────────────────────┐
+# │     Core Settings      │
+# └────────────────────────┘
+# Foundation settings that determine the application's basic operational parameters
+
+threads: 3                    # Controls parallel processing capacity
+                             # Higher values increase performance but consume more resources
+
+use_proxy_for_imap: false    # Enables secure proxy routing for IMAP connections
+                             # Recommended for enhanced privacy and security
+
+keepalive_interval: 120      # Connection monitoring frequency (seconds)
+                             # Ensures stable network connectivity
+
+referral_codes:              # Marketing tracking codes
+  - ""                       # Add multiple entries for different campaigns
+
+# ┌────────────────────────┐
+# │  Email Redirection     │
+# └────────────────────────┘
+# Configuration for automated email forwarding and handling
+
+redirect_settings:
+  enabled: false             # Main switch for email redirection system
+  email: ""                  # Target email for redirected messages
+  password: ""               # Access credentials (use secure storage!)
+  imap_server: ""  # Mail server address
+  use_proxy: false           # Optional proxy protection layer
+
+# ┌────────────────────────┐
+# │   CAPTCHA Services     │
+# └────────────────────────┘
+# Integration settings for automated CAPTCHA resolution
+
+captcha_module: 2captcha     # CAPTCHA service selection:
+                             # ▸ 2captcha: Primary solution
+                             # ▸ anticaptcha: Secondary option
+
+two_captcha_api_key: "cdd5c8ec24a1e036f3dc1a539d43b475"      # Authentication key for 2captcha
+anti_captcha_api_key: ""     # Authentication key for anticaptcha
+
+# ┌────────────────────────┐
+# │    Startup Timing      │
+# └────────────────────────┘
+# Application initialization delay configuration
+
+delay_before_start:
+  min: 2                     # Minimum delay duration (seconds)
+  max: 3                     # Maximum delay duration (seconds)
+                             # System will randomly select a value in this range
+
+# ┌────────────────────────┐
+# │ Mail Server Directory  │
+# └────────────────────────┘
+# Comprehensive IMAP server mappings for supported email providers
+
+# Email Provider Settings
+imap_settings:
+  # Global Providers
+  gmail.com: imap.gmail.com
+  yahoo.com: imap.mail.yahoo.com
+  outlook.com: imap-mail.outlook.com
+  hotmail.com: imap-mail.outlook.com
+  icloud.com: imap.mail.me.com
+  
+  # Regional Providers
+  mail.ru: imap.mail.ru
+  rambler.ru: imap.rambler.ru
+  gmx.com: imap.gmx.com
+  onet.pl: imap.poczta.onet.pl
