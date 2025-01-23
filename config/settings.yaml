@@ -42,7 +42,7 @@ captcha_module: 2captcha     # CAPTCHA service selection:
                              # ▸ 2captcha: Primary solution
                              # ▸ anticaptcha: Secondary option
 
-two_captcha_api_key: "cdd5c8ec24a1e036f3dc1a539d43b475"      # Authentication key for 2captcha
+two_captcha_api_key: ""      # Authentication key for 2captcha
 anti_captcha_api_key: ""     # Authentication key for anticaptcha
 
 # ┌────────────────────────┐
